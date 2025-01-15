@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.B.A.S</title>
+    <link rel="icon" href="SABAS_Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 id="login-heading" class="rainbow-border">S.A.B.A.S</h2>
+        <h3 class="rainbow-text"> Smart Automated Batch for Attendance System </h3>
+        <form onsubmit="applyRainbowBorder(event)">
+            <div class="input-group">
+                <label for="username">Student UID</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Student Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="show-password">
+                <input type="checkbox" id="showPassword" onclick="togglePassword()">
+                <label for="showPassword">Show Password</label>
+            </div>
+            <button type="submit">Find Details</button>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const passwordCheckbox = document.getElementById("showPassword");
+            passwordInput.type = passwordCheckbox.checked ? "text" : "password";
+        }
+
+        
+        const users = [
+            { uid: "D3_ED_8D_0E", password: "Sanjeev_Kumar@123" },
+            { uid: "93_94_D4_24", password: "Aarush_Kumar@123" },
+            { uid: "26_27_D8_90", password: "Chirag_Chowdhury@123" },
+            { uid: "56_92_98_0D", password: "Ujan_Dhali@123" },
+            { uid: "94_93_D7_0F", password: "Suman_Debnath@123" },
+            { uid: "58_94_57_6B", password: "Arinjay_Chakroborty@123" },
+            { uid: "67_85_56_6B", password: "Harman_Singh@123" },
+            { uid: "85_98_58_96", password: "Sampriti_Ganguly@123" },
+            { uid: "68_98_69_21", password: "Arinika_Das@123" },
+            { uid: "96_72_65_02", password: "Pratibha_Jha@123" },
+            { uid: "58_69_17_20", password: "Diya_Dutta@123" }
+        ];
+
+        function applyRainbowBorder(event) {
+            event.preventDefault();
+
+            const uidInput = document.getElementById("username").value.trim();
+            const passwordInput = document.getElementById("password").value.trim();
+
+            const isValid = users.some(user => user.uid === uidInput && user.password === passwordInput);
+
+            if (isValid) {
+                alert("Correct!");
+                const urlParams = new URLSearchParams();
+                urlParams.append("uid", uidInput);
+                urlParams.append("password", passwordInput);
+                const newPageUrl = `details.html?${urlParams.toString()}`;
+
+                setTimeout(() => {
+                    window.location.href = newPageUrl;
+                }, 500);
+            } else {
+                alert("Invalid UID or Password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

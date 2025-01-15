@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .card h3 {
+            font-size: 1.5em;
+            margin: 15px 0 10px;
+        }
+        .card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .card button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 60%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <img src="SABAS_Logo.png" alt="Image 2">
+            <h3>Student Details</h3>
+            <p id="name">Student Name : </p>
+            <p id="class">Student Class : </p>
+            <p id="roll">Student Roll No : </p>
+            <p id="uid">Student UID : </p>
+        </div>
+        <div class="card">
+            <img src="image2.jpeg" alt="Image 2">
+            <h3>Attendance Details</h3>
+            <p>No. of Working Days : 365</p>
+            <p id="Present_Days">No. of Present Days : </p>
+            <p id="attendance_percentage">Attendance Percentage : </p>
+        </div>
+        <div class="card">
+            <img src="academics.png" alt="Image 3">
+            <h3>Marksheet</h3>
+            <details>
+                <summary>PA1 Marksheet</summary>
+                <p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>English</td>
+                                <td id="PA1 English">0</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Language</td>
+                                <td id="PA1 2nd Language">0</td>
+                            </tr>
+                            <tr>
+                                <td>Math</td>
+                                <td id="PA1 Math">0</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td id="PA1 Science">0</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td id="PA1 Computer">0</td>
+                            </tr>
+                            <tr>
+                                <td>SST</td>
+                                <td id="PA1 SST">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            </details>
+            <details>
+                <summary>Half Yearly Marksheet</summary>
+                <p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>English</td>
+                                <td id="HY English">0</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Language</td>
+                                <td id="HY 2nd Language">0</td>
+                            </tr>
+                            <tr>
+                                <td>Math</td>
+                                <td id="HY Math">0</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td id="HY Science">0</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td id="HY Computer">0</td>
+                            </tr>
+                            <tr>
+                                <td>SST</td>
+                                <td id="HY SST">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            </details>
+            <details>
+                <summary>PA3 Marksheet</summary>
+                <p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>English</td>
+                                <td id="PA3 English">0</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Language</td>
+                                <td id="PA3 2nd Language">0</td>
+                            </tr>
+                            <tr>
+                                <td>Math</td>
+                                <td id="PA3 Math">0</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td id="PA3 Science">0</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td id="PA3 Computer">0</td>
+                            </tr>
+                            <tr>
+                                <td>SST</td>
+                                <td id="PA3 SST">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            </details>
+            <details>
+                <summary>Final Exam Marksheet</summary>
+                <p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>English</td>
+                                <td id="FE English">0</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Language</td>
+                                <td id="FE 2nd Language">0</td>
+                            </tr>
+                            <tr>
+                                <td>Math</td>
+                                <td id="FE Math">0</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td id="FE Science">0</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td id="FE Computer">0</td>
+                            </tr>
+                            <tr>
+                                <td>SST</td>
+                                <td id="FE SST">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            </details>
+        </div>
+        <div class="details">
+            <center>
+                <a href="about.html" class="button-link">About Us</a>
+                <a href="app-debug.apk" class="button-link" download>Download App</a>
+            </center>
+        </div>
+    </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const uid2 = urlParams.get("uid");
+        console.log("UID:", uid);
+
+        const scriptURL = "https://script.google.com/macros/s/AKfycbwpD8NZCZn4xHmf60PQtR7eI0keItXWbKYlWJfbv1TVKirN-NT_QUB_rV3SYmb7dAG_RA/exec?action=" + uid2;
+        const attendanceURL = "https://script.google.com/macros/s/AKfycbxtp3ghjk6YAXakzwwgeYKrgPXJnM3p1s4uTv3kXaO_zfq7Q4AgspUQS3BFntPhzoBvQA/exec?action=check&uid=" + uid2;
+        const academicsURL = "https://script.google.com/macros/s/AKfycbyPlI6w5qh7H1G0vJvmERLIIAsOQO6Sk-zRZbWcsdsdRLontrw9NoX_ZEPjy19jdTULNQ/exec?action=" + uid2;
+
+        async function fetchData() {
+            try {
+                const response = await fetch(scriptURL);
+                if (response.ok) {
+                    const data = await response.json();
+                    const items = data.items;
+                    const firstItem = items[0];
+                    const { Name, Class, "Roll number": RollNumber } = firstItem;
+                    const name = document.getElementById('name');
+                    const classNo = document.getElementById('class');
+                    const roll = document.getElementById('roll');
+                    const uid = document.getElementById('uid');
+
+                    name.innerText = "Student Name : " + Name;
+                    classNo.innerText = "Student Class : " + Class;
+                    roll.innerText = "Student Roll No : " + RollNumber;
+                    uid.innerText = "Student UID : " + uid2;
+                } else {
+                    console.error("HTTP Error:", response.status);
+                }
+            } catch (error) {
+                console.error("Fetch Error:", error);
+            }
+        }
+
+        async function fetchAttendance () {
+            fetch(attendanceURL).then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            }).then(data => {
+                const attendanceCount = data.attendance_count;
+                const days = document.getElementById('Present_Days');
+                const attedance_percentage = document.getElementById('attendance_percentage');
+                days.innerText = "No. of Present Days : " + attendanceCount;
+                var attendance = (attendanceCount / 365) * 100;
+                attendance = attendance.toFixed(2);
+                attendance_percentage.innerText = "Attendance Percentage : " + attendance + "%";
+
+            }).catch(error => {
+                console.error("Error fetching the data:", error);
+            });
+        }
+
+        async function fetchAcademics() {
+            try {
+                const response = await fetch(academicsURL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                const studentData = data[0];
+
+                // PA1 Marks
+                document.getElementById('PA1 English').textContent = studentData["PA1 English"];
+                document.getElementById('PA1 2nd Language').textContent = studentData["PA1 2nd Language"];
+                document.getElementById('PA1 Math').textContent = studentData["PA1 Maths"];
+                document.getElementById('PA1 Science').textContent = studentData["PA1 Science"];
+                document.getElementById('PA1 Computer').textContent = studentData["PA1 CS"];
+                document.getElementById('PA1 SST').textContent = studentData["PA1 SST"];
+
+                // Half Yearly Marks
+                document.getElementById('HY English').textContent = studentData["HY English"];
+                document.getElementById('HY 2nd Language').textContent = studentData["HY 2nd Language"];
+                document.getElementById('HY Math').textContent = studentData["HY Maths"];
+                document.getElementById('HY Science').textContent = studentData["HY Science"];
+                document.getElementById('HY Computer').textContent = studentData["HY CS"];
+                document.getElementById('HY SST').textContent = studentData["HY SST"];
+
+                // PA3 Marks
+                document.getElementById('PA3 English').textContent = studentData["PA3 English"];
+                document.getElementById('PA3 2nd Language').textContent = studentData["PA3 2nd Language"];
+                document.getElementById('PA3 Math').textContent = studentData["PA3 Maths"];
+                document.getElementById('PA3 Science').textContent = studentData["PA3 Science"];
+                document.getElementById('PA3 Computer').textContent = studentData["PA3 CS"];
+                document.getElementById('PA3 SST').textContent = studentData["PA3 SST"];
+
+                // Final Examination Marks
+                document.getElementById('FE English').textContent = studentData["FE English"];
+                document.getElementById('FE 2nd Language').textContent = studentData["FE 2nd Language"];
+                document.getElementById('FE Math').textContent = studentData["FE Maths"];
+                document.getElementById('FE Science').textContent = studentData["FE Science"];
+                document.getElementById('FE Computer').textContent = studentData["FE CS"];
+                document.getElementById('FE SST').textContent = studentData["FE SST"];
+            } catch (error) {
+                console.error("Error fetching the data:", error);
+            }
+        }
+
+        fetchData();
+        fetchAttendance();
+        fetchAcademics();
+
+    </script>
+</body>
+</html>
